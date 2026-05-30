@@ -1,4 +1,4 @@
-# 🎫 Support CRM — Customer Ticketing System
+# Support CRM — Customer Ticketing System
 
 A full-stack customer support ticketing system built with **Python + FastAPI**, **SQLite**, and **vanilla HTML/JS/Tailwind CSS**.
 
@@ -6,13 +6,13 @@ Built as part of the Datastraw Technologies Internship Assessment.
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 > [Add your Railway URL here after deployment]
 
 ---
 
-## 📸 Features
+## Features
 
 | Feature | Description |
 |---|---|
@@ -29,7 +29,7 @@ Built as part of the Datastraw Technologies Internship Assessment.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend:** Python 3.11 + FastAPI
 - **Database:** SQLite (file-based, zero config)
@@ -38,7 +38,7 @@ Built as part of the Datastraw Technologies Internship Assessment.
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 support-crm/
@@ -55,7 +55,7 @@ support-crm/
 
 ---
 
-## ⚙️ Local Setup
+## Local Setup
 
 ### 1. Clone the repo
 ```bash
@@ -94,7 +94,7 @@ uvicorn main:app --reload
 
 ---
 
-## 📡 API Reference
+## API Reference
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -113,18 +113,7 @@ uvicorn main:app --reload
 
 ---
 
-## 🚢 Deployment (Railway.app)
-
-1. Push code to GitHub
-2. Go to [railway.app](https://railway.app) → New Project → Deploy from GitHub
-3. Select your repo
-4. Railway auto-detects Python and uses `railway.toml` for the start command
-5. Add environment variable: `DATABASE_PATH=support_crm.db`
-6. Done! Railway gives you a public URL.
-
----
-
-## 🗄️ Database Schema
+## Database Schema
 
 ```sql
 -- Tickets table
@@ -153,7 +142,7 @@ CREATE TABLE notes (
 
 ---
 
-## 🤔 Architecture Decisions
+## Architecture Decisions
 
 1. **SQLite over PostgreSQL** — Zero setup, file-based, perfect for this scale. Railway persists it fine.
 2. **Vanilla JS over React** — Keeps it simple. No build step, no bundler, just one HTML file.
@@ -162,7 +151,7 @@ CREATE TABLE notes (
 
 ---
 
-## 💡 If I Had More Time
+## If I Had More Time
 
 - Add user authentication (login/logout)
 - Email notifications when tickets are created/updated
@@ -172,6 +161,6 @@ CREATE TABLE notes (
 
 ---
 
-## 👨‍💻 Built by
+## Built by
 
 Vishal Satish Kale - vishalsatishkale294@gmail.com
