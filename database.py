@@ -1,10 +1,3 @@
-"""
-database.py — Sets up the SQLite database and creates tables.
-
-SQLite is a file-based database (support_crm.db will appear in your folder).
-No server needed — perfect for local dev and small projects.
-"""
-
 import sqlite3
 import os
 
@@ -25,10 +18,6 @@ def get_db():
 
 
 def init_db():
-    """
-    Creates the tables if they don't already exist.
-    Called once when the app starts.
-    """
     conn = get_db()
     cursor = conn.cursor()
 

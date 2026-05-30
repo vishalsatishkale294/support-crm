@@ -19,7 +19,7 @@ from models import (
     TicketListItem, TicketDetail, NoteResponse
 )
 
-# ── APP SETUP ─────────────────────────────────────────────────────────────────
+# APP SETUP
 
 app = FastAPI(
     title="Support CRM API",
@@ -27,7 +27,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS — allows your frontend (even on a different domain) to call the API
+# CORS - allows your frontend (even on a different domain) to call the API
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],   # In production, replace * with your frontend URL
@@ -39,7 +39,7 @@ app.add_middleware(
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
-# ── STARTUP ───────────────────────────────────────────────────────────────────
+# STARTUP
 
 @app.on_event("startup")
 def startup_event():
@@ -47,7 +47,7 @@ def startup_event():
     init_db()
 
 
-# ── HELPER FUNCTIONS ──────────────────────────────────────────────────────────
+# HELPER FUNCTIONS 
 
 def now_iso() -> str:
     """Returns current UTC time as ISO string e.g. 2025-01-15T10:30:00Z"""
@@ -70,7 +70,7 @@ def row_to_dict(row) -> dict:
     return dict(row)
 
 
-# ── ROUTES ────────────────────────────────────────────────────────────────────
+# ROUTES
 
 @app.get("/")
 def serve_frontend():
@@ -78,7 +78,7 @@ def serve_frontend():
     return FileResponse("static/index.html")
 
 
-# ── 1. CREATE TICKET ──────────────────────────────────────────────────────────
+# 1.CREATE TICKET 
 
 @app.post("/api/tickets", status_code=201)
 def create_ticket(body: CreateTicketRequest):
@@ -118,7 +118,7 @@ def create_ticket(body: CreateTicketRequest):
         conn.close()  # Always close the connection
 
 
-# ── 2. LIST TICKETS (with search + filter) ────────────────────────────────────
+# 2.LIST TICKETS (with search + filter)
 
 @app.get("/api/tickets")
 def list_tickets(
@@ -128,16 +128,6 @@ def list_tickets(
     limit: int = Query(100, description="Max tickets to return"),
     offset: int = Query(0, description="Pagination offset")
 ):
-    """
-    GET /api/tickets
-    Returns all tickets. Supports optional filtering and search.
-
-    Query params:
-      ?status=Open
-      ?search=john
-      ?priority=High
-      ?status=Open&search=billing
-    """
     conn = get_db()
     try:
         # Build query dynamically based on filters provided
@@ -186,7 +176,7 @@ def list_tickets(
         conn.close()
 
 
-# ── 3. GET SINGLE TICKET (with notes) ────────────────────────────────────────
+# 3.GET SINGLE TICKET (with notes)
 
 @app.get("/api/tickets/{ticket_id}")
 def get_ticket(ticket_id: str):
@@ -220,7 +210,7 @@ def get_ticket(ticket_id: str):
         conn.close()
 
 
-# ── 4. UPDATE TICKET ──────────────────────────────────────────────────────────
+# 4.UPDATE TICKET
 
 @app.put("/api/tickets/{ticket_id}")
 def update_ticket(ticket_id: str, body: UpdateTicketRequest):
@@ -271,7 +261,7 @@ def update_ticket(ticket_id: str, body: UpdateTicketRequest):
         conn.close()
 
 
-# ── 5. DELETE TICKET ──────────────────────────────────────────────────────────
+# 5.DELETE TICKET
 
 @app.delete("/api/tickets/{ticket_id}")
 def delete_ticket(ticket_id: str):
@@ -295,7 +285,7 @@ def delete_ticket(ticket_id: str):
         conn.close()
 
 
-# ── 6. STATS ENDPOINT (Bonus!) ────────────────────────────────────────────────
+# 6.STATS ENDPOINT
 
 @app.get("/api/stats")
 def get_stats():
@@ -321,7 +311,7 @@ def get_stats():
         conn.close()
 
 
-# ── RUN (for local development) ───────────────────────────────────────────────
+#RUN (for local development)
 
 if __name__ == "__main__":
     import uvicorn

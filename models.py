@@ -1,5 +1,5 @@
 """
-models.py — Data models using Pydantic.
+models.py - Data models using Pydantic.
 
 Pydantic validates data automatically.
 Example: If customer_email is missing, FastAPI returns a 422 error before your code even runs.
@@ -9,7 +9,7 @@ from pydantic import BaseModel, EmailStr
 from typing import Optional, List
 
 
-# ── REQUEST MODELS (what the client SENDS to us) ──────────────────────────────
+# REQUEST MODELS (what the client SENDS to us)
 
 class CreateTicketRequest(BaseModel):
     """Used for POST /api/tickets"""
@@ -27,10 +27,9 @@ class UpdateTicketRequest(BaseModel):
     author: Optional[str] = "Support Agent"
 
 
-# ── RESPONSE MODELS (what we SEND back to the client) ─────────────────────────
+# RESPONSE MODELS (what we SEND back to the client)
 
 class NoteResponse(BaseModel):
-    """A single note/comment on a ticket"""
     id: int
     ticket_id: str
     note_text: str
@@ -39,7 +38,6 @@ class NoteResponse(BaseModel):
 
 
 class TicketListItem(BaseModel):
-    """Lightweight — used in the list view (no notes, no full description)"""
     ticket_id: str
     customer_name: str
     customer_email: str
@@ -51,7 +49,6 @@ class TicketListItem(BaseModel):
 
 
 class TicketDetail(BaseModel):
-    """Full ticket with notes — used in the detail view"""
     ticket_id: str
     customer_name: str
     customer_email: str

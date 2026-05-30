@@ -174,4 +174,4 @@ CREATE TABLE notes (
 
 ## 👨‍💻 Built by
 
-[Your Name] — [Your Email]
+Vishal Satish Kale - vishalsatishkale294@gmail.com
