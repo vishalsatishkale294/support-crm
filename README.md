@@ -16,16 +16,16 @@ Built as part of the Datastraw Technologies Internship Assessment.
 
 | Feature | Description |
 |---|---|
-| ✅ Create Tickets | Customer name, email, subject, description, priority |
-| ✅ List All Tickets | Clean list with ID, name, status, priority, date |
-| ✅ Search | Live search across name, email, subject, ID, description |
-| ✅ Filter by Status | Open / In Progress / Closed |
-| ✅ Filter by Priority | High / Medium / Low |
-| ✅ View & Update | Full detail view with status update + notes |
-| ✅ Notes/Comments | Add timestamped notes to any ticket |
-| ✅ Stats Dashboard | Summary cards showing ticket counts |
-| ✅ Delete Tickets | Remove tickets and their notes |
-| ✅ Keyboard Shortcuts | Press `N` for new ticket, `Esc` to close modals |
+| Create Tickets | Customer name, email, subject, description, priority |
+| List All Tickets | Clean list with ID, name, status, priority, date |
+| Search | Live search across name, email, subject, ID, description |
+| Filter by Status | Open / In Progress / Closed |
+| Filter by Priority | High / Medium / Low |
+| View & Update | Full detail view with status update + notes |
+| Notes/Comments | Add timestamped notes to any ticket |
+| Stats Dashboard | Summary cards showing ticket counts |
+| Delete Tickets | Remove tickets and their notes |
+| Keyboard Shortcuts | Press `N` for new ticket, `Esc` to close modals |
 
 ---
 
