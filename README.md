@@ -8,7 +8,7 @@ Built as part of the Datastraw Technologies Internship Assessment.
 
 ## Live Demo
 
-> support-crm-production-4af7.up.railway.app
+> [support-crm-production-4af7.up.railway.app](https://support-crm-production-4af7.up.railway.app/)
 
 ---
 
